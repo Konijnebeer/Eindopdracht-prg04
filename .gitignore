@@ -1,0 +1,5 @@
+/.vscode
+/fishing_free
+/node_modules
+/pnpm-lock.yaml
+/t.ts
