@@ -24,7 +24,7 @@ export class Fish extends Actor {
 
     const rand = new Random();
 
-    // Weighted random pick based on chance
+    // Weighted random pick based on chance vallue
     const weightedList: FishData[] = [];
     for (const fish of fishList) {
       for (let i = 0; i < fish.chance; i++) {
@@ -52,7 +52,7 @@ export class Fish extends Actor {
     this.events.on("exitviewport", (e) => this.#fishLeft(e));
     this.events.on("kill", (e) => this.#afterDeath(e));
   }
-  // teleports fish to the right when exiting the screen
+  // Teleports fish to the right when exiting the screen
   #fishLeft(e) {
     e.target.pos = new Vector(
       randomIntInRange(800, 1000),
@@ -63,7 +63,7 @@ export class Fish extends Actor {
       0,
     );
   }
-  // resets the fish after a catch
+  // Resets the fish after a catch
   #afterDeath(e: KillEvent) {
     this.pos = new Vector(
       randomIntInRange(800, 1000),
@@ -77,7 +77,7 @@ export class Fish extends Actor {
     this.scene?.engine.add(this);
   }
   
-  // stops the fish and reveals the sprite
+  // Stops the fish and reveals the sprite
   stopMoving() {
     this.graphics.use(this.#sprite);
     this.vel = Vector.Zero;

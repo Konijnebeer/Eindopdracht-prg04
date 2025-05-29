@@ -44,7 +44,7 @@ export class ScoreUI extends Actor {
     });
     this.addChild(this.#highscoreLabel);
   }
-
+  // Update the score based on the player and the points given
   updateScore(newScore: number, name: string, player: number) {
     if (player == 1) {
       this.#scorePlayer1 += newScore;
@@ -66,6 +66,7 @@ export class ScoreUI extends Actor {
         `Player 2 Score: ${this.#scorePlayer2} - Catched A: ${name}`;
     }
   }
+  // Show when a fish has gotten away based on the player
   fishGotAway(player: number) {
     if (player == 1) {
       this.#scoreLabelPlayer1.text =

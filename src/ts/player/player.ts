@@ -10,7 +10,7 @@ import {
 import { Resources } from "../resources.ts";
 import { Dobber } from "./dobber.ts";
 
-
+// Save the 2 player controls for ease of use
 type PlayerControls = {
   left: Keys;
   right: Keys;
@@ -117,7 +117,6 @@ export class Player extends Actor {
         this,
       );
       engine.add(dobber)
-      // this.addChild(dobber);
       this.#activeDobber = dobber; // Track the active dobber
 
       // Set activeDobber to null when dobber is killed

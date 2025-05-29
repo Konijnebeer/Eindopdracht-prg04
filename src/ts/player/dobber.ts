@@ -72,7 +72,7 @@ export class Dobber extends Actor {
     });
   }
 
-  // Simplified onCatchFish method
+  // Start the catch timer
   onCatchFish(fish: Fish) {
     fish.stopMoving();
     this.scale = new Vector(2.7, 2.7);
@@ -87,8 +87,7 @@ export class Dobber extends Actor {
       // Calculate t (0 to 1 over 3 seconds)
       const t = Math.min(this.#castElapsed / 3000, 1);
       // Quadratic Bezier:
-      const scaleValue = (1 - t) * (1 - t) * 1 + 2 * (1 - t) * t * 2 +
-        t * t * 1;
+      const scaleValue = (1 - t) * (1 - t) * 1 + 2 * (1 - t) * t * 2 + t * t * 1;
       this.scale = new Vector(scaleValue * 3, scaleValue * 3);
     }
 

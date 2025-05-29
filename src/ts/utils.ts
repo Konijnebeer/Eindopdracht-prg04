@@ -8,6 +8,7 @@ export type FishData = {
   chance: number;
 };
 
+// Data Objects for the diffrent types of fish
 export const fishList: FishData[] = [
   {
     name: "Clownfish",
