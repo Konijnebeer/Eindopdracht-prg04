@@ -49,9 +49,12 @@ export class Game extends Engine {
 
     this.add(spawnTimer);
     spawnTimer.start();
+
+    // Add the players
     this.add(new Player(1));
     this.add(new Player(2));
 
+    // Start game
     this.start(ResourceLoader).then(() => this.startGame());
   }
 
